@@ -1,0 +1,137 @@
+.editor {
+  border:none !important;
+  padding:0 !important;
+  box-shadow: none !important;
+
+  ul.toolbar {
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
+  ul.toolbar::after {
+    clear: both;
+    display: table;
+    content: '';
+  }
+
+  ul.toolbar > li {
+    float: left;
+    display: list-item;
+    list-style: none;
+    margin: 0 5px 10px 0;
+  }
+
+  ul.toolbar a[data-command='BOLD'] {
+    font-weight: bold;
+  }
+
+  ul.toolbar a[data-command='ITALIC'] {
+    font-style: italic;
+  }
+
+  ul.toolbar a[data-command='UNDERLINE'] {
+    text-decoration: underline;
+  }
+
+  ul.toolbar a[data-command='STRIKETHROUGH'] {
+    text-decoration: line-through;
+  }
+
+  .public-DraftEditor-content {
+    min-height: 40px;
+  }
+
+  .DraftEditor-root {
+    border: 1px solid rgb(221, 221, 221);
+    padding: 5px;
+  }
+}
+
+ul.wysihtml5-toolbar div.wysihtml5-colors {
+  display: block;
+  width: 50px;
+  height: 20px;
+  margin-top: 2px;
+  margin-left: 5px;
+  position: absolute;
+  pointer-events: none;
+}
+
+ul.wysihtml5-toolbar a.wysihtml5-colors-title {
+  padding-left: 70px;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value='black'] {
+  background: black !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value='silver'] {
+  background: silver !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value='gray'] {
+  background: gray !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value='maroon'] {
+  background: maroon !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value='red'] {
+  background: red !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value='purple'] {
+  background: purple !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value='green'] {
+  background: green !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value='olive'] {
+  background: olive !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value='navy'] {
+  background: navy !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value='blue'] {
+  background: blue !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value='orange'] {
+  background: orange !important;
+}
+
+.glyphicon-quote:before {
+  content: '\201C';
+  font-family: Georgia, serif;
+  font-size: 50px;
+  position: absolute;
+  top: -4px;
+  left: -3px;
+  max-height: 100%;
+}
+
+.glyphicon-quote:after {
+  content: '\0000a0';
+}
+
+.alignment-right {
+  text-align: right;
+}
+
+.alignment-left {
+  text-align: left;
+}
+
+.alignment-center {
+  text-align: center;
+}
+
+.flipY {
+  transform: rotateY(180deg)
+}
