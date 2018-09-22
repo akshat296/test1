@@ -22,7 +22,7 @@ import Skin from './components/common/Utils/Skin';
 import RootModule from './components/modules';
 
 import createStore from './redux';
- import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
