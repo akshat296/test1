@@ -34,7 +34,7 @@ module.exports = (env, options) => {
     },
     entry: ['@babel/polyfill', settings.srcPath],
     output: {
-      path: __dirname + '/dist',
+      path: settings.distPath,
       publicPath: '/',
       filename: 'bundle.js',
     },
