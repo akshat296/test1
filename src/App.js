@@ -5,7 +5,7 @@ import './assets/less/AdminLTE.css';
 // AdminLTE Skin
 import './assets/less/skins/all-skins.css';
 // Custom CSS
-import './App.css';
+// import './App.css';
 
 // Datepicker
 import 'react-datepicker/dist/react-datepicker.css';
@@ -17,12 +17,12 @@ import { Redirect, Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
+import { ToastContainer } from 'react-toastify';
 import Skin from './components/common/Utils/Skin';
 
 import RootModule from './components/modules';
 
 import createStore from './redux';
-import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -37,8 +37,8 @@ class App extends Component {
           <Skin>
             <ConnectedRouter history={history}>
               <Switch>
-                {/* <Route exact path="/" render={() => <Redirect to="/dashboard" />} /> */}
-                <Route path="/" component={RootModule} />
+                <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
+                <Route component={RootModule} path="/" />
               </Switch>
             </ConnectedRouter>
           </Skin>

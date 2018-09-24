@@ -1,12 +1,14 @@
 {
-  "name": "tsweb",
+  "name": "myapp",
   "version": "0.1.0",
   "private": true,
+  "main": "src/index.js",
   "dependencies": {
     "apisauce": "^0.14.3",
     "bootstrap": "3",
     "config": "^2.0.1",
     "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
     "handlebars": "^4.0.11",
     "history": "^4.7.2",
     "html-react-parser": "^0.4.6",
@@ -40,13 +42,39 @@
     "validate.js": "^0.12.0"
   },
   "devDependencies": {
+    "babel-loader": "^8.0.2",
+    "react-hot-loader": "^4.3.11",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.0.2",
+    "body-parser": "^1.18.3",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.28.11",
     "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.1.0",
     "husky": "^0.14.3",
     "less-watch-compiler": "^1.11.2",
     "lint-staged": "^7.1.0",
     "npm-run-all": "^4.1.2",
-    "prettier": "^1.14.3"
+    "open-browser-webpack-plugin": "0.0.5",
+    "postcss-loader": "^2.1.6",
+    "prettier": "^1.14.3",
+    "redux-devtools-extension": "^2.13.5",
+    "rimraf": "2.5.4",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.4.0",
+    "webpack-dashboard": "0.2.0",
+    "webpack-dev-middleware": "^2.0.4"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -59,9 +87,20 @@
     "build-skins": "less-watch-compiler --run-once src/assets/less/skins src/assets/less/skins/",
     "build-less": "less-watch-compiler --run-once --main-file=AdminLTE.less src/assets/less/ src/assets/less/",
     "start": "react-scripts start",
+    "start-webpack": "webpack-dashboard -- webpack-dev-server",
+    "prebuild-webpack": "rimraf dist",
+    "start-w": "webpack-dev-server --mode development --open --hot",
+    "start-web": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "build-w": "./node_modules/.bin/webpack --mode production",
+    "build-webpack": "webpack --progress --colors --config webpack.config.js --bail",
     "start:dev": "NODE_ENV=development node --inspect=5858 ./bin/www",
     "build": "cd bpmn-tsbuddy/properties-panel-extension; npm run dev; cd ../../; react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      "last 3 version"
+    ]
   }
 }
