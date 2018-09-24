@@ -93,7 +93,7 @@
     "start-web": "webpack-dev-server  --progress --colors --hot --inline --config ./webpack.config.js --open --bail --mode development",
     "build-webpack": "webpack --progress --colors --config webpack.config.js --bail",
     "start:dev": "NODE_ENV=development node --inspect=5858 ./bin/www",
-    "build": "cd bpmn-tsbuddy/properties-panel-extension; npm run dev; cd ../../; react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
