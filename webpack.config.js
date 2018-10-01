@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const prefix = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -20,27 +21,14 @@ module.exports = (env, options) => {
     resolve: {
       extensions: ['*', '.js', '.jsx'],
     },
-    module: {
-      rules: [
-        {
-          test: /\.(js|jsx)$/,
-          exclude: /node_modules/,
-          use: ['babel-loader'],
-        },
-      ],
-    },
-    resolve: {
-      extensions: ['*', '.js', '.jsx'],
-    },
+
     entry: ['@babel/polyfill', settings.srcPath],
     output: {
       path: settings.distPath,
       publicPath: '/',
       filename: 'bundle.js',
     },
-    plugins: [
-      new webpack.HotModuleReplacementPlugin(),
-    ],
+
     devServer: {
       contentBase: './dist',
       hot: true,
@@ -48,7 +36,7 @@ module.exports = (env, options) => {
     module: {
       rules: [
         {
-          test: /\.js|jsx$/,
+          test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: ['babel-loader'],
         },
@@ -68,7 +56,7 @@ module.exports = (env, options) => {
               loader: 'postcss-loader',
               options: {
                 plugins: [
-                  require('autoprefixer')(),
+                  prefix(),
                 ],
                 sourceMap: isDevMode,
               },
@@ -105,6 +93,7 @@ module.exports = (env, options) => {
     },
 
     plugins: [
+      new webpack.HotModuleReplacementPlugin(),
       new CleanWebpackPlugin([settings.distPath], {
         verbose: true,
       }),
