@@ -13,7 +13,7 @@
     "history": "^4.7.2",
     "html-react-parser": "^0.4.6",
     "jquery": "^3.3.1",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.19",
     "moment": "^2.22.1",
     "morgan": "^1.9.0",
     "node-sass": "^4.9.3",
